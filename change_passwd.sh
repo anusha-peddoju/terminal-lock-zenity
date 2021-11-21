@@ -8,5 +8,5 @@ sudo chmod +x  setlock #giving excutable permission to setlock
 sudo mv setlock /usr/bin #moving setlock to /usr/bin Directory
 sudo echo setlock  >> $HOME/.bashrc #adding setlock file to .bashrc file in home to run start in terminal.
 #here bashrc file only runs the file present in /usr/bin.
-sudo rm -r ../terminal_lock_zenity #removing terminal-lock-zenity directory.
+sudo rm -r ../terminal-lock-zenity #removing terminal-lock-zenity directory.
 
