@@ -7,7 +7,7 @@ then
 	figlet "Welcome"
 else
 	sleep 1s
-	figlet "You are not an Authorised User"
+	figlet "enter correct password"
 	sleep 3s
 	kill $(pgrep terminal) #Killing terminal
 fi
