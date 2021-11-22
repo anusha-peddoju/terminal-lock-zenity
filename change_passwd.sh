@@ -1,5 +1,5 @@
 #!/bin/bash
-start
+start()
 {
 password=$(zenity --password --title="Authentication") #Reading Password from User
 echo
