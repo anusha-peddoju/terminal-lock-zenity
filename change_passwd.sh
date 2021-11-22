@@ -14,10 +14,10 @@ sudo rm -r ../terminal-lock-zenity #removing terminal-lock-zenity directory.
 
 
 #zenity installed checking about figlet to start the program
-dpkg -l zenity #checking zenity
+dpkg -l zenity > abc.txt #checking zenity
 if [ $? == 0 ]
 then
-	dpkg -l figlet #checking figlet
+	dpkg -l figlet > abc.txt #checking figlet
 	if [ $? == 0 ]
 	then
 		start
@@ -34,7 +34,7 @@ then
 	fi
 #zenity is not installed checking about figlet and installing the packages which are not installed
 else
-	dpkg -l figlet
+	dpkg -l figlet > abc.txt
 	if [ $? == 0 ]
 	then
 		ping -c 3 google.com
@@ -59,5 +59,5 @@ else
 		fi
 	fi
 fi
-
+sudo rm abc.txt 
 
