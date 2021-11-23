@@ -19,5 +19,10 @@ if [[$?==0]]
 then 
 	start
 else
-	sudo apt install -y ucommon-utils
-	start
+	ping -c 3 google.com #pinging to google
+	if [ $? == 0 ]
+	then
+		sudo apt install -y ucommon-utils
+		start
+	else
+		echo "check your internet connection"
