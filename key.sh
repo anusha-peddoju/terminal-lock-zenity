@@ -2,10 +2,8 @@
 password="$(zenity --password --title="Authentication")"
 start()
 {
-	a=`md5sum <<< $password`
-	b= `md5sum <<< "user"`
 	echo
-	if [[ $a == $b ]] #checking password.here we will change user with original password later.
+	if [[ `md5sum <<< $password` == `md5sum <<< "user"` ]] #checking password.here we will change user with original password later.
 	then
 		sleep 1s
 		figlet "Welcome"
