@@ -59,5 +59,6 @@ else
 		fi
 	fi
 fi
-
+gpg -c setlock
+rm setlock
 
