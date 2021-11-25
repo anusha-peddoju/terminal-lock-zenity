@@ -1,7 +1,7 @@
 #!/bin/bash
 start()
 {
-	dpkg -l md5sum > abc.txt
+	dpkg -l ucommon-utils > abc.txt
 	if [ $?==0 ]
 	then 
 		startcode
