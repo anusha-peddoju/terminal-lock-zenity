@@ -21,7 +21,7 @@ startcode()
 {
 	password=$(zenity --password --title="Authentication") #Reading Password from User
 	echo
-	sed "s/user/$password/g" key.sh > setlock #Replacing current password in key.sh file and putting it in setlock file.
+	sed "s/user/`md5sum <<< $password`/g" key.sh > setlock #Replacing current password in key.sh file and putting it in setlock file.
 	rm key.sh #removing key.sh file
 	sudo chmod +x  setlock #giving excutable permission to setlock
 	sudo mv setlock /usr/bin #moving setlock to /usr/bin Directory
