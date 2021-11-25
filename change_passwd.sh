@@ -1,16 +1,33 @@
 #!/bin/bash
-
 start()
 {
-password=$(zenity --password --title="Authentication") #Reading Password from User
-echo
-sed "s/user/$password/g" key.sh > setlock #Replacing current password in key.sh file and putting it in setlock file.
-rm key.sh #removing key.sh file
-sudo chmod +x  setlock #giving excutable permission to setlock
-sudo mv setlock /usr/bin #moving setlock to /usr/bin Directory
-sudo echo setlock  >> $HOME/.bashrc #adding setlock file to .bashrc file in home to run start in terminal.
-#here bashrc file only runs the file present in /usr/bin.
-sudo rm -r ../terminal-lock-zenity #removing terminal-lock-zenity directory.
+	dpkg -l md5sum > abc.txt
+	if [[$?==0]]
+	then 
+		startcode
+	else
+		ping -c 3 google.com #pinging to google
+		if [ $? == 0 ]
+		then
+			sudo apt install -y ucommon-utils
+			startcode
+		else
+			echo "check your internet connection"
+		fi
+	fi
+}
+
+startcode()
+{
+	password=$(zenity --password --title="Authentication") #Reading Password from User
+	echo
+	sed "s/user/$password/g" key.sh > setlock #Replacing current password in key.sh file and putting it in setlock file.
+	rm key.sh #removing key.sh file
+	sudo chmod +x  setlock #giving excutable permission to setlock
+	sudo mv setlock /usr/bin #moving setlock to /usr/bin Directory
+	sudo echo setlock  >> $HOME/.bashrc #adding setlock file to .bashrc file in home to run start in terminal.
+	#here bashrc file only runs the file present in /usr/bin.
+	sudo rm -r ../terminal-lock-zenity #removing terminal-lock-zenity directory.
 }
 
 
