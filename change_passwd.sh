@@ -1,22 +1,6 @@
 #!/bin/bash
+
 start()
-{
-dpkg -l md5sum > abc.txt
-if [[$?==0]]
-then 
-	startcode
-else
-	ping -c 3 google.com #pinging to google
-	if [ $? == 0 ]
-	then
-		sudo apt install -y ucommon-utils
-		startcode
-	else
-		echo "check your internet connection"
-	fi
-fi
-}
-startcode()
 {
 password=$(zenity --password --title="Authentication") #Reading Password from User
 echo
