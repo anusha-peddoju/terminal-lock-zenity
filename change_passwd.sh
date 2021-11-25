@@ -2,7 +2,7 @@
 start()
 {
 	dpkg -l md5sum > abc.txt
-	if [[$?==0]]
+	if [ $?==0 ]
 	then 
 		startcode
 	else
