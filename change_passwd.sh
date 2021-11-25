@@ -13,6 +13,8 @@ else
 		startcode
 	else
 		echo "check your internet connection"
+	fi
+fi
 }
 startcode()
 {
